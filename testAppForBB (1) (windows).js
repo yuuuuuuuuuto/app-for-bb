@@ -33,6 +33,7 @@
     const eachCompleteRes = await client.record.getAllRecords({
       app: firstApp.number,
     });
+    console.log(firstApp.number);
     console.log(eachCompleteRes);
 
     //↓課題マスタ上の課題数をカウントする。

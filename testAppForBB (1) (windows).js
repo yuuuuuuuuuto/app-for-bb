@@ -31,12 +31,14 @@
     const client = new KintoneRestAPIClient();
     // ↓課題提出用アプリからレコード数をカウントする。
     const eachCompleteRes = await client.record.getAllRecords({
-      app: 31,
+      app: firstApp.number,
     });
     console.log(eachCompleteRes);
 
     //↓課題マスタ上の課題数をカウントする。
-    const allTaskRes = await client.record.getAllRecords({ app: 10 });
+    const allTaskRes = await client.record.getAllRecords({
+      app: secondApp.number,
+    });
     console.log(allTaskRes);
     console.log(allTaskRes.length);
     const taskNum = allTaskRes.length;
